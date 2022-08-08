@@ -1,0 +1,51 @@
+
+ <div class="background">
+  
+    <img src="../assets/images/hexaware.png" alt="" srcset="">
+  
+  
+    <div class="box" >
+    <div id="form-wrapper" >
+    <div class = "container" >
+        <h1 style="color: black; font-weight: bolder; ">MAKE A CLAIM</h1>
+<form #claimForm = "ngForm" (ngSubmit)="addClaim()">
+    <h1>Tell us how we can help.</h1>
+
+    <!-- <div class="form-group">
+        <label for="sel1">Select a Claim Type:</label>
+        <select class="form-control" id="sel1">
+          <option>Flood Damage</option>
+          <option>Property</option>
+          <option>Life</option>
+          <option>Fire Damage</option>
+        </select>
+      </div> -->
+
+      <div class="form-group">
+        <label for="amount">Amount Request</label>
+        <input name ="amount"  [(ngModel)]= "claim.amount"  required #amount ="ngModel" type="amount" class="form-control" id="amount" aria-describedby="amount" placeholder="$1234.00" type="number">
+        <small id="emailHelp" class="form-text text-muted">Ask For What You Deserve.</small>
+      </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Please Provide A Brief Description:</label>
+            <textarea name="description" [(ngModel)] = "claim.description"  required #description ="ngModel"  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <br>
+    
+            <div class="form-group">
+              <label for="exampleFormControlFile1">Upload Any Relevant Files</label>
+              <input name="file" [(ngModel)] = "claim.file"  required #file="ngModel"  type="file" class="file" id="exampleFormControlFile1">
+            </div>
+            
+            <br>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+</form>
+
+
+   
+
+          
+   

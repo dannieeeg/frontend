@@ -1,0 +1,36 @@
+img {
+    // @keyframes spinning {
+    //     from { transform: rotate(0deg) }
+    //     to { transform: rotate(360deg) }
+    //   }
+    float: left;
+    width: 60px;
+    border-radius: 30px;
+    border-width: 2px;
+    border-color: black;
+    animation-name: spinning;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    /* linear | ease | ease-in | ease-out | ease-in-out */
+    animation-timing-function: linear;
+}
+
+.mat-toolbar{
+    background-color: rgb(184, 0, 0);
+    color: white;
+    // border: 34px;
+    
+  }
+  .mat-button{
+     color: white;
+  }
+
+  .mat-button:hover{
+    background-color: white;
+    color:rgb(184, 0, 0);
+  }
+  .spacer {
+    flex: 1 1 auto;
+  }
+
+  

@@ -1,0 +1,105 @@
+<div class="background">
+  
+  <img src="../assets/images/hexaware.png" alt="" srcset="">
+  
+
+
+  <div class="box">
+  <div id="form-wrapper">
+<div class = "container">
+    <h2 style="color: black; font-weight: bolder; ">REGISTER</h2>
+    <!-- angular form  module imports and method call for logging in the user from the register service -->
+<form #registerform = "ngForm"  (ngSubmit) = "registerUser()">
+    <small >
+        <!-- incorrect credentials message 500 or 401 error -->
+        {{ message }} 
+    </small>
+    <div class="form-group" style="color: black; font-weight: bolder; ">
+        <label for="firstName">
+          FIRST NAME:
+      </label>
+        <input 
+        type="firstname" class="form-control"  
+        name = "firtname" [(ngModel)] = "customer.firstName">
+        <!-- <small [class.d-none]="firstname.invalid || firstname.touched"> -->
+          <!-- class binding for validation -->
+           <!-- A valid <b><i>Email</i></b> is required to login.
+          </small> -->
+      </div>
+      <div class="form-group" style="color: black; font-weight: bolder; ">
+        <label for="lastName">
+          LAST NAME:
+      </label>
+        <input 
+        type="lastname" class="form-control"  
+        name = "email" [(ngModel)] = "customer.lastName">
+        <!-- <small [class.d-none]="email.invalid || email.touched"> -->
+          <!-- class binding for validation -->
+           <!-- A valid <b><i>Email</i></b> is required to login.
+          </small> -->
+      </div>
+    <!-- requiring the email input to be 
+        valid input type and an error message 
+        shows up to let the 
+        user know that it is required. -->
+    <div class="form-group"style="color: black; font-weight: bolder; ">
+      <label for="email">
+        EMAIL ADDRESS:
+    </label>
+      <input 
+      type="email" class="form-control"  
+      name = "email" [(ngModel)] = "customer.emailId" 
+      required pattern = "^ [a-z0-9._%+-]+@ [a-z0-9.-]+\. [a-z] {2,4}$" 
+      required #email="ngModel" [class.is-invalid] = "email.invalid  && email.touched">
+      <!-- <small [class.d-none]="email.invalid || email.touched">
+   class binding for validation -->
+         <!-- A valid <b><i>Email</i></b> is required to login. -->
+        <!-- </small> --> 
+        <div *ngIf="email.errors && (email.invalid && email.touched) ">
+          <small class="text-danger" *ngIf=" "email.errors.required> Email Id is Required</small>
+          <small class="text-danger" *ngIf=" "email.errors.pattern> Enter Valid Email ID</small>
+        </div>
+    </div>
+    <div class="form-group" style="color: black; font-weight: bolder; ">
+        <label for="username">
+          USERNAME:
+      </label>
+    <input 
+        type="username" class="form-control"  
+        name= "username" [(ngModel)] = "customer.userName" 
+        
+        required #username="ngModel" [class.is-invalid] = "username.invalid  && username.touched">
+        <small [class.d-none]="email.invalid || email.touched">
+          <!-- class binding for validation -->
+           A valid <b><i>U</i>Username</b> is required to login.
+          </small>
+      </div>
+    <div class="form-group" style="color: black; font-weight: bolder; ">
+      <label for="pwd">
+        PASSWORD:
+    </label>
+    <!-- validation using regex  and  angular ngmodule expressions -->
+      <input type="password" class="form-control"  
+      name = "password" [(ngModel)] = "customer.password"
+       required #password ="ngModel"  
+       [class.is-invalid] = "password.invalid  && password.touched">
+       <small [class.d-none]="password.invalid || password.touched">
+        <!-- class binding  -->
+         A valid <i><b>Password</b></i> is required to login.
+        </small>
+    </div>
+    <br>
+    <button type="submit" class="btn btn-light">REGISTER</button> 
+  </form>.
+  <br> 
+  
+  <button class="btn btn-light">
+    <small class = "float-right" [routerLink]="['']"> 
+LOGIN
+</small>
+  </button>
+  </div>
+
+</div>
+</div>
+</div>
