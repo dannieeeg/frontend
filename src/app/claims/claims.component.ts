@@ -28,6 +28,7 @@ message ='';
       console.log("response received");
       this._router.navigate(['loginsuccess']);
       this.message = "Claim Submission was Successful!";
+      alert("Your Claim has been SUBMITTED")
     },
     error: (e)=> {
       console.log("OOPS! Something's gone wrong");
@@ -36,18 +37,5 @@ message ='';
  })
  }
 
-//  registerUser(){
-//   this.service.registerUser(this.customer).subscribe(
-//     data =>{
-//       console.log("response received");
-//       this._router.navigate(['']);
-//       this.message = "You're all signed up!";
-//     },
-//     error => {
-//       console.log("OOPS! Something's gone wrong!");
-//       this.message=error.error;
-//     }
-//   )
-// }
 
 }

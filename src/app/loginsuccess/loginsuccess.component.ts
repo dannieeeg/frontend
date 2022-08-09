@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ClaimService } from '../claim.service';
+import { Customer } from '../customer';
+import { AuthenticationService } from '../services/authentication.service';
 import { Claim } from './../claim.model';
 
 @Component({
@@ -9,10 +11,13 @@ import { Claim } from './../claim.model';
   styleUrls: ['./loginsuccess.component.scss']
 })
 export class LoginsuccessComponent implements OnInit {
-claims: Claim[] | undefined;
 
+  searchText: any;
+  customer:Customer[] | undefined;
+  claims: Claim[] | undefined;
+  username: string = localStorage.getItem('currentUser');
 
-  constructor(private _service: ClaimService, private router: Router) { }
+  constructor(private authenticationService: AuthenticationService,private _service: ClaimService, private router: Router) { }
 
   ngOnInit(): void {
     this._service.getAllClaims().subscribe(
@@ -22,15 +27,24 @@ claims: Claim[] | undefined;
     )
   }
 
+  logout() {  
+    this.authenticationService.logout();  
+    this.router.navigate(['']);  
+  }  
+
+
   editClaim(claimId: any) {
     this.router.navigate(['editClaim', claimId]);
   }
 
   deleteClaim(claimId: any) {
-    this._service.deleteClaim( claimId).subscribe({
+    this._service.deleteClaim(claimId).subscribe({
       next: Claim => {
         this.claims;
-      },
+        alert("You Have Deleted This Claim!");
+        location.reload()
+
+      } ,
       error: (e) => {}
     });
   }

@@ -6,3 +6,4 @@ export class Customer {
 
     constructor(public id?:number, public emailId?:string, public userName?:string,public  password?:string, public firstName?: string, public lastName?: string){}
 }
+

@@ -1,6 +1,9 @@
 <div class="background">
 <h1 class = "claimDash"> YOUR CLAIM PORTAL</h1>
-
+<div class="container">    
+  <h1 class="userDisplay">Hi, {{username}}</h1>    
+  <button  (click)="logout()" class="btn btn-danger">Logout</button>    
+</div>   
 
 
 <div class="example-button-container">
@@ -15,17 +18,52 @@
     <!-- <img  class ="famlogo"src="../../assets/images/famlogo.png" alt=""> -->
   </div>
 
-  <mat-form-field>
+  <!-- <mat-form-field>
     <input  class="search" type="text" matInput placeholder="Search">
-    </mat-form-field>
+    </mat-form-field> -->
+    <img class="logo" src="../../assets/images/hex.png" alt="" srcset="">
+    <h1 class = "claimDash"> CLAIM HISTORY </h1>
+   
+   <br>
+    <div class="container">
+      <div class="search-name">
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder=" SEARCH  ">
+      </div>
+      <br>
+      <ul class=" test" *ngFor="let claim of claims | filter:searchText">
+        <li>
+          <span>
+        <mat-card>
+           
+            <mat-card-title>CLAIM: {{claim.claimId}} </mat-card-title>
+            <mat-card-subtitle>CLIENT ID:  {{claim.customerId}}</mat-card-subtitle>
+            <mat-card-subtitle> CLAIM AMOUNT:  $  {{claim.amount}}</mat-card-subtitle>
+            <mat-card-subtitle> DESCRIPTION: {{claim.description}}</mat-card-subtitle>
+            <mat-card-subtitle> FILE UPLOAD: {{claim.file}}</mat-card-subtitle>
+        
+            <mat-card-actions align="end">
+              <button mat-button (click)="editClaim(claim.claimId)"><mat-icon>create</mat-icon></button>
+              <button mat-button (click)="deleteClaim(claim.claimId)">	<mat-icon>delete</mat-icon>
+            </button>
+            </mat-card-actions>
+          </mat-card>
+          </span>
+        </li>
+        </ul>
+      <!-- <ul *ngFor="let claim of claims | filter:searchText">
+          <li>
+              <span>{{claim.claimId}}</span>
+          </li>
+      </ul> -->
+  </div>
 <br>
 <img class="logo" src="../../assets/images/hex.png" alt="" srcset="">
 <h1 class = "claimDash"> CLAIM HISTORY </h1>
-
+<!-- 
   <div class=" test" *ngFor="let claim of claims">
 <mat-card>
-   
-    <mat-card-title>CLAIM: {{claim.claimId}} </mat-card-title>
+    -->
+    <!-- <mat-card-title>CLAIM: {{claim.claimId}} </mat-card-title>
     <mat-card-subtitle>CLIENT ID:  {{claim.customerId}}</mat-card-subtitle>
     <mat-card-subtitle> CLAIM AMOUNT:  $  {{claim.amount}}</mat-card-subtitle>
     <mat-card-subtitle> DESCRIPTION: {{claim.description}}</mat-card-subtitle>
@@ -38,8 +76,7 @@
     </mat-card-actions>
   </mat-card>
 
-  <!-- <>{{claim.amount}} + Yay -->
-</div>
+</div> -->
   <!-- <br>
   <mat-card>
     <mat-card-title>CLAIM</mat-card-title>

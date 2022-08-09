@@ -18,7 +18,7 @@ import {MatIconModule} from '@angular/material/icon'
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 import { WjCoreModule } from '@grapecity/wijmo.angular2.core';
@@ -42,6 +42,7 @@ import { EditClaimComponent } from './edit-claim/edit-claim.component';
     ClaimsComponent,
     NavbarComponent,
     EditClaimComponent,
+    
   
     
     
@@ -60,6 +61,7 @@ import { EditClaimComponent } from './edit-claim/edit-claim.component';
     MatButtonModule,
     WjCoreModule,
     WjGridModule,
+    Ng2SearchPipeModule,
     MatCardModule,
     ReactiveFormsModule,
     MatIconModule,

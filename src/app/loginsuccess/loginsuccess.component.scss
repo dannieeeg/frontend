@@ -1,4 +1,13 @@
+.userDisplay{
+    top: 20%;
+    float: right;
+}
 
+
+.btn{
+    float: left;
+    top: 45%; 
+}
 
 .famlogo{
     position: absolute;
@@ -31,13 +40,18 @@
 
 .mat-form-field{
     font-family: 'Cormorant Garamond';
+    font-size: large;
     text-align: center;
+    border-radius: 5px 5px ;
+    background-color: slategrey;
+
 }
 
 .mat-form-field:hover{
     font-family: 'Cormorant Garamond';
-  
+    // background-color: slategrey;
 }
+
 
 .claimDash{
 color: black;

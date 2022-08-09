@@ -26,8 +26,8 @@ export class ClaimService {
     return this._http.put<Claim>(`http://localhost:8080/claims/update/${id}`, claim);
   }
 
-  public deleteClaim(claimId: number): Observable<void> {
-    return this._http.delete<void>("http://localhost:8080/claims/delete/${id}");
+  public deleteClaim(id: any): Observable<void> {
+    return this._http.delete<void>(`http://localhost:8080/claims/delete/${id}`);
   }
 
 }
