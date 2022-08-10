@@ -9,7 +9,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RegisterService {
 
-  constructor(private _http: HttpClient) { }       
+  constructor(private _http: HttpClient) { }     
+  
+  public getUserByUsername( customer: string):Observable<any> {
+    return this._http.get(`http://localhost:8080/getUser/${customer}`);
+  }
 
   public loginUser(customer : Customer):Observable<any> {
    return this._http.post("http://localhost:8080/login", customer);

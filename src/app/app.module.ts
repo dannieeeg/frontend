@@ -28,6 +28,7 @@ import {MatCardModule} from '@angular/material/card';
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditClaimComponent } from './edit-claim/edit-claim.component';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 // import { FooterComponent } from './footer/footer.component';
 
 
@@ -42,6 +43,7 @@ import { EditClaimComponent } from './edit-claim/edit-claim.component';
     ClaimsComponent,
     NavbarComponent,
     EditClaimComponent,
+    ContactPageComponent,
     
   
     

@@ -61,6 +61,12 @@ export class LoginComponent implements OnInit {
     {  
           localStorage.setItem('currentUser', res.userName)
           console.log("Response Received");
+          this._service.getUserByUsername(res.userName).subscribe({
+            next: res => {
+              console.log(res.id);
+              localStorage.setItem('customerId', res.id);
+            }
+          });
           this._router.navigate(["loginsuccess"]);  
       }  
       else  {

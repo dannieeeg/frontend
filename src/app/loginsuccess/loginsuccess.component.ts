@@ -22,12 +22,18 @@ export class LoginsuccessComponent implements OnInit {
   ngOnInit(): void {
     this._service.getAllClaims().subscribe(
       (res: Claim[]) => {
-        this.claims = res;
+        console.log(res);
+        this.claims = res.filter(claim => claim.customer.id == parseInt(localStorage.getItem('customerId')));
       }
     )
   }
 
-  logout() {  
+status(){
+  alert("Your Claim is IN PROGRESS");
+}
+
+  logout() {
+    localStorage.removeItem('customerId');  
     this.authenticationService.logout();  
     this.router.navigate(['']);  
   }  
@@ -36,6 +42,8 @@ export class LoginsuccessComponent implements OnInit {
   editClaim(claimId: any) {
     this.router.navigate(['editClaim', claimId]);
   }
+
+
 
   deleteClaim(claimId: any) {
     this._service.deleteClaim(claimId).subscribe({

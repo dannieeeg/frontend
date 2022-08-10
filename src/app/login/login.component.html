@@ -8,10 +8,14 @@
   <div id="form-wrapper" >
   <div class = "container" >
     <h2 style="color: black; font-weight: bolder; ">LOGIN</h2>
+
+
     <!-- angular form  module imports and method call for logging in the user from the register service -->
+
+
 <form #loginform = "ngForm"  (ngSubmit) = "loginUser()">
     <small >
-        <!-- incorrect credentials message 500 or 401 error -->
+        <!-- incorrect credentials message: 401 error -->
         {{ message }} 
     </small>
 
@@ -38,7 +42,7 @@
               </div>
               
               <!-- class binding for validation -->
-               A valid <b><i></i>Username</b> is required to login.
+               <!-- A valid <b><i></i>Username</b> is required to login. -->
               <!-- </small> -->
           </div>
     <div class="form-group">

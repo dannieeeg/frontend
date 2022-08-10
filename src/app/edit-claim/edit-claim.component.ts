@@ -1,3 +1,4 @@
+import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ClaimService } from '../claim.service';
@@ -9,7 +10,7 @@ import { Claim } from './../claim.model';
   styleUrls: ['./edit-claim.component.scss']
 })
 export class EditClaimComponent implements OnInit {
-  claim!: Claim;
+  claim: Claim;
   message = '';
   myFiles:string [] = [];
 
@@ -25,6 +26,15 @@ export class EditClaimComponent implements OnInit {
     
   }
 
+
+  readFile(fileChangeEvent: Event){
+    const file = (fileChangeEvent.target as HTMLInputElement).files[0];
+    let fileReader = new FileReader();
+    fileReader.onload =(e) => {
+      console.log(fileReader.result);
+    }
+    fileReader.readAsText(file)
+  }
 
   updateClaims(){
     this.claimService.updateClaims(this.claim,this.claim.claimId).subscribe({

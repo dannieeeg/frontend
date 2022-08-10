@@ -1,4 +1,5 @@
 import { DatePipe } from "@angular/common";
+import { Customer } from './customer';
 
 export class Claim {
 
@@ -6,7 +7,9 @@ export class Claim {
     customerId!: number;
     amount:number | undefined;
     description: string | undefined;
+    createdAt:string |undefined;
     file!: FileReader;
-    // dateTime!: [DatePipe];
+    customer?: Customer;
+    dateTime!: Date;
     // status: enum ;
 }

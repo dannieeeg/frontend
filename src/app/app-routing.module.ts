@@ -7,12 +7,16 @@ import { RegisterComponent } from './register/register.component';
 import { ClaimsComponent } from './claims/claims.component';
 import { EditClaimComponent } from './edit-claim/edit-claim.component';
 import { AuthGuard } from './services/auth.guard';
+import { ContactPageComponent } from './contact-page/contact-page.component';
 
 const routes: Routes = [
   { path:'', component:LoginComponent},
 
   { path:'loginsuccess', component:LoginsuccessComponent, 
   canActivate: [AuthGuard]},
+
+  { path:'contactPage', component:ContactPageComponent},
+
 
   { path:'loginfailure', component:LoginfailureComponent},
 

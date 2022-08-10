@@ -1,22 +1,16 @@
 .background {
+    position: absolute;
     width: 100%;
-    height:100%;
-    background: url('../../assets/images/redblueback.png') no-repeat;
+    height: 100%;
+    background: url('../../assets/images/new.png') no-repeat;
     background-size: cover;
-    color: white;
     text-align: center;
-    // opacity: 85%;
+    margin-left: auto;
+    margin-right:auto;
+    background-position: 50% 50%;
+    background-attachment: fixed;
 }
-
-// #form-wrapper {     
-//     width: 300px;           /* Set this to your convenience */
-//     height: 200px;          /* Set this to your convenience */
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     margin-top: -100px;     /* Half of height */
-//     margin-left: -150px;     /* Half of width */
-// }
+ 
 
 .btn{
     font-family: 'Cormorant Garamond';
@@ -56,23 +50,13 @@
     height: 450px;
     position: absolute;
     padding:20px;
-    top: 50%;
+    top: 35%;
     left: 50%;
-    margin-top: -100px;     /* Half of height */
+    // margin-top: 50px;     /* Half of height */
     margin-left: -150px;
-    background-color: rgba(255, 255, 255, .15);  
+    background-color: rgba(72, 55, 55, 0.15);  
     backdrop-filter: blur(5px);
     box-shadow: inset;
     border:2px solid;
     border-radius: px;
     }
-
-// #form-wrapper {     
-//     width: 300px;           /* Set this to your convenience */
-//     height: 200px;          /* Set this to your convenience */
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     margin-top: -100px;     /* Half of height */
-//     margin-left: -150px;     /* Half of width */
-// }
