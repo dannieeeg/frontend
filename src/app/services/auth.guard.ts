@@ -10,6 +10,11 @@ export class AuthGuard implements CanActivate{
   
   constructor(private _router:Router){}
 
+
+// the only people who can activate the paths protected by the authguard are only the ones who have been 
+// saved in localstorage and set to the currentUser, but if not then the router will return them back to 
+// the login page
+
   canActivate() {
       if (localStorage.getItem('currentUser')) {
         return true;

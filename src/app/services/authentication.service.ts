@@ -8,13 +8,16 @@ import { LoginComponent } from './../login/login.component';
 
 
 export class AuthenticationService {
-// login(username: string, password:string):boolean {
-//   if (username == "daniel" && password == "daniel") {
-//     localStorage.setItem('currentUser', "loggedin");
-//     return true;
-//   }
-//   return false;
-// }
+
+
+/** loginUser will provide the userCred of type any so that we can authenticate the users that are registered
+ * to move to the next page 
+ * 
+ * the logout method here is when the user that was set wil be removed along with the information 
+ * that is owned by that user
+
+ */
+
 
 loginUser(userCred: any){
   return this._http.post("http://localhost:8080/login/authenticate", userCred);

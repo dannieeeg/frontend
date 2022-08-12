@@ -8,8 +8,7 @@ import { Customer } from '../customer';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent implements OnInit {
-  // customer
-  // firstName = Customer.firstName;
+
   constructor() { }
 
   ngOnInit(): void {

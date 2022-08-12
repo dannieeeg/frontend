@@ -1,79 +1,77 @@
 <!-- <div [ngStyle]="{backgroundImage:'url(frontend/src/assets/images/hexaware.png)'}" > -->
- <div class="background">
+  <div class="background">
   
-  <img  src="../assets/images/hexaware.png" alt="" srcset="" >
-
-
-  <div class="box" >
-  <div id="form-wrapper" >
-  <div class = "container" >
-    <h2 style="color: black; font-weight: bolder; ">LOGIN</h2>
-
-
-    <!-- angular form  module imports and method call for logging in the user from the register service -->
-
-
-<form #loginform = "ngForm"  (ngSubmit) = "loginUser()">
-    <small >
-        <!-- incorrect credentials message: 401 error -->
-        {{ message }} 
-    </small>
-
-    <!-- requiring the username input to be 
-        valid input type and an error message 
-        shows up to let the 
-        user know that it is required. -->
-    <div class="form-group">
-            <label for="username"  style="color: black;">
-              <b>
-                USERNAME:</b>
-          </label>
-        <input minlength="3"
-            type="username" class="form-control"  
-            name = "username" [(ngModel)] = "customer.userName" 
-            
-            required #username="ngModel" [class.is-invalid] = "username.invalid  && username.touched">
-            <!-- <small [class.d-none]="username.invalid || username.touched"> -->
-              <div *ngIf="username.errors && (username.invalid && username.touched) ">
-                <small class="text-danger" *ngIf=" "username.errors.required> Username is Required</small>
-                <!-- <small class="text-danger" *ngIf=" "email.errors.pattern> Enter Valid Email ID</small> -->
-
-             
-              </div>
+    <!-- <img  src="../assets/images/hexaware.png" alt="" srcset="" > -->
+  
+  
+    <div class="box" >
+    <div id="form-wrapper" >
+    <div class = "container" >
+      <h2 style="color: black; font-weight: bolder; ">LOGIN</h2>
+  
+  
+      <!-- angular form  module imports and method call for logging in the user from the register service -->
+  
+  
+  <form #loginform = "ngForm"  (ngSubmit) = "loginUser()">
+      <small >
+          <!-- incorrect credentials message: 401 error -->
+          {{ message }} 
+      </small>
+  
+      <!-- requiring the username input to be 
+          valid input type and an error message 
+          shows up to let the 
+          user know that it is required. -->
+      <div class="form-group">
+              <label for="username"  style="color: black;">
+                <b>
+                  USERNAME:</b>
+            </label>
+          <input minlength="3"
+              type="username" class="form-control"  
+              name = "username" [(ngModel)] = "customer.userName" 
               
-              <!-- class binding for validation -->
-               <!-- A valid <b><i></i>Username</b> is required to login. -->
-              <!-- </small> -->
-          </div>
-    <div class="form-group">
-      <label for="pwd"  style="color: black; "><b>
-        PASSWORD:</b>
-    </label>
-    <!-- validation using regex  and  angular ngmodule expressions -->
-      <input type="password" class="form-control"  
-      name = "password" [(ngModel)] = "customer.password"
-       required #password ="ngModel"  
-       [class.is-invalid] = "password.invalid  && password.touched">
-       <small [class.d-none]="password.invalid || password.touched">
-        <!-- class binding  -->
-         A valid <i><b>Password</b></i> is required to login.
-        </small>
-    </div>
-    <br>
-    <button type="submit" class="btn btn-light"><b>LOGIN</b></button> 
-  </form>
-  <br> 
+              required #username="ngModel" [class.is-invalid] = "username.invalid  && username.touched">
+              <!-- <small [class.d-none]="username.invalid || username.touched"> -->
+                <div *ngIf="username.errors && (username.invalid && username.touched) ">
+                  <small class="text-danger" *ngIf=" "username.errors.required> Username is Required</small>
+                  <!-- <small class="text-danger" *ngIf=" "email.errors.pattern> Enter Valid Email ID</small> -->
   
-
-  <!-- link to the register component -->
-  <!-- <small class="registerLink" (ngClick)="registerLink()" >New User? Sign Up! </small> -->
-  <button class="btn btn-light">
-    <small class = "float-right" [routerLink]="['/register']"> 
-      <b>REGISTER</b>
-</small>
-  </button>
-  <div >
-
+               
+                </div>
+                
+                <!-- class binding for validation -->
+                 <!-- A valid <b><i></i>Username</b> is required to login. -->
+                <!-- </small> -->
+            </div>
+      <div class="form-group">
+        <label for="pwd"  style="color: black; "><b>
+          PASSWORD:</b>
+      </label>
+      <!-- validation using regex  and  angular ngmodule expressions -->
+        <input type="password" class="form-control"  
+        name = "password" [(ngModel)] = "customer.password"
+         required #password ="ngModel"  
+         [class.is-invalid] = "password.invalid  && password.touched">
+         <small [class.d-none]="password.invalid || password.touched">
+          <!-- class binding  -->
+           A valid <i><b>Password</b></i> is required to login.
+          </small>
+      </div>
+      <br>
+      <button type="submit" class="btn btn-light"><b>LOGIN</b></button> 
+    </form>
+    <br> 
+    
+  
+    <!-- link to the register component -->
+    <!-- <small class="registerLink" (ngClick)="registerLink()" >New User? Sign Up! </small> -->
+    <button style="color: black;" class="dialog" mat-button (click)="openDialog()">
+        <b>REGISTER</b>
+    </button>
+    <div >
+  
+    </div>
   </div>
-</div>
-</div>
+  </div>

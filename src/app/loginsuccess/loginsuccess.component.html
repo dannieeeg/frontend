@@ -20,17 +20,56 @@
 
     <img class="logo" src="../../assets/images/hex.png" alt="" srcset="">
     <h1 class = "claimDash"> CLAIM HISTORY </h1>
-   
-   <br>
     <div class="container">
       <div class="search-name">
           <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder=" SEARCH  ">
-      </div>
+      
+      
+        </div>
+    <ul class=" test" *ngFor="let claim of claims | filter:searchText">
+      <li>
+        <span>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col"></th>
+          <th scope="col">Policy #</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Description</th>
+          <th scope="col">File</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td> {{claim.claimId}}</td>
+          <td> ${{claim.amount}}</td>
+          <td>{{claim.description}}</td>
+          <td>{{claim.file}}</td>
+          <td><button mat-button (click)="editClaim(claim.claimId)"><mat-icon>create</mat-icon></button></td>
+          <td><button mat-button (click)="deleteClaim(claim.claimId)">	<mat-icon>delete</mat-icon></button></td>
+        </tr>
+      </tbody>
+    </table>
+   <br>
+  </span>
+</li>
+</ul>
+    <div class="container">
+      <!-- <div class="search-name">
+          <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="on" placeholder=" SEARCH  ">
+      
+      
+        </div> -->
       <br>
-      <ul class=" test" *ngFor="let claim of claims | filter:searchText">
+      <!-- <table matSort (matSortChange)="sortData($event)"> -->
+      <!-- <ul class=" test" *ngFor="let claim of claims | filter:searchText">
         <li>
-          <span>
-        <mat-card>
+          <span> -->
+            
+        <!-- <mat-card >
            
             <mat-card-title>Policy #: {{claim.claimId}} </mat-card-title>
         
@@ -41,16 +80,16 @@
 
             <mat-card-actions align="end">
               <button mat-button (click)="editClaim(claim.claimId)"><mat-icon>create</mat-icon></button>
-              <button mat-button (click)="deleteClaim(claim.claimId)">	<mat-icon>delete</mat-icon>
-            </button>
+              <button mat-button (click)="deleteClaim(claim.claimId)">	<mat-icon>delete</mat-icon></button>
             </mat-card-actions>
-          </mat-card>
-          </span>
+          </mat-card> -->
+          <!-- </span>
         </li>
-        </ul>
-   
+        </ul> -->
+      <!-- </table> -->
   </div>
+
 <br>
 <!-- <img class="logo" src="../../assets/images/hex.png" alt="" srcset=""> -->
 <h1 class = "claimDash"> CLAIM HISTORY </h1>
-</div>
+<!-- </div> -->

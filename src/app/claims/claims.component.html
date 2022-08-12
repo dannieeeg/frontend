@@ -14,11 +14,11 @@
       <div class="form-group">
         <label for="amount" style="font-weight: bolder;">Amount Request</label>
         <input  required pattern = "/^-?\d+(,\d{3})*(\.\d{1,2})?$/"name ="amount"  [(ngModel)]= "claim.amount"  required #amount ="ngModel" type="amount" class="form-control" id="amount" aria-describedby="amount" placeholder="$1234.00" type="number">
-        <small  style="font-weight: bolder; color: black" id="emailHelp" class="form-text text-muted" >Ask For What You Deserve.</small>
+        <small  style="font-weight: bolder; color: black"  class="form-text text-muted" >Ask For What You Deserve.</small>
       </div>
 
         <div class="form-group">
-            <label for="exampleFormControlTextarea1"  style="font-weight: bolder;">Please Provide A Brief Description:</label>
+            <label for="exampleFormControlTextarea1" style="font-weight: bolder;">Please Provide A Brief Description:</label>
             <textarea name="description" [(ngModel)] = "claim.description"  required #description ="ngModel"  class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
           </div>
           <br>

@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHandler, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Claim } from './claim.model';
+import { Customer } from './customer';
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +23,18 @@ export class ClaimService {
     return this._http.post<Claim>("http://localhost:8080/claims/create", claim);
   }
 
+
+
   public updateClaims(claim: Claim, id: any):Observable<Claim> {
-    return this._http.put<Claim>(`http://localhost:8080/claims/update/${id}`, claim);
+let httpHeader = { headers: new HttpHeaders ({username:localStorage.getItem('currentUser'),password:localStorage.getItem('currentPass') })}
+
+    return this._http.put<Claim>(`http://localhost:8080/claims/update/${id}`, claim, httpHeader);
   }
 
   public deleteClaim(id: any): Observable<void> {
-    return this._http.delete<void>(`http://localhost:8080/claims/delete/${id}`);
+    let httpHeader = { headers: new HttpHeaders ({username:localStorage.getItem('currentUser'),password:localStorage.getItem('currentPass') })}
+
+    return this._http.delete<void>(`http://localhost:8080/claims/delete/${id}`, httpHeader);
   }
 
 }

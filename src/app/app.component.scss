@@ -1,0 +1,25 @@
+// .placeholder{
+//     display: flex;
+//     flex-flow: column;
+//     height: calc( 100vh - 60px); //viewport height - app-navbar height
+//   }
+//   .inner-placeholder{
+//     flex: 1;// if you want center container large space else will take size of the content or apply flex-basis
+//   }
+  app-footer{
+    position:fixed;
+    top: 90%;
+    font-family: 'Cormorant Garamond';
+    font-weight: bolder;
+    font-size: 25px;
+    width:100%;
+    color: maroon;
+    text-align: center;
+    background-color: white;
+    height: 40px;
+  }
+//   app-navbar{
+//     position:fixed;
+//     top: 0px;
+//     height: 60px;
+//   }

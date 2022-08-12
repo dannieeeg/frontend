@@ -1,6 +1,8 @@
+<div class="dialog">
+
 <div class="background">
   
-  <img src="../assets/images/hexaware.png" alt="" srcset="">
+  <!-- <img src="../assets/images/hexaware.png" alt="" srcset=""> -->
   
 
 
@@ -20,11 +22,11 @@
       </label>
         <input 
         type="firstname" class="form-control"  
-        name = "firtname" [(ngModel)] = "customer.firstName">
-        <!-- <small [class.d-none]="firstname.invalid || firstname.touched"> -->
+        name = "firtname"required #firstName="ngModel" [(ngModel)] = "customer.firstName">
+        <small *ngIf="firstName.invalid && firstName.touched">
           <!-- class binding for validation -->
-           <!-- A valid <b><i>Email</i></b> is required to login.
-          </small> -->
+                <b><i>First Name</i></b> is required to login.
+               </small> 
       </div>
       <div class="form-group" style="color: black; font-weight: bolder; ">
         <label for="lastName">
@@ -32,12 +34,14 @@
       </label>
         <input 
         type="lastname" class="form-control"  
-        name = "email" [(ngModel)] = "customer.lastName">
-        <!-- <small [class.d-none]="email.invalid || email.touched"> -->
+        name = "lastname" required #lastName="ngModel" [(ngModel)] = "customer.lastName">
+        
+        <small *ngIf="lastName.invalid && lastName.touched">
           <!-- class binding for validation -->
-           <!-- A valid <b><i>Email</i></b> is required to login.
-          </small> -->
-      </div>
+                 <b><i>Last Name</i></b> is required to login.
+               </small> 
+      </div><br>
+
     <!-- requiring the email input to be 
         valid input type and an error message 
         shows up to let the 
@@ -49,17 +53,29 @@
       <input 
       type="email" class="form-control"  
       name = "email" [(ngModel)] = "customer.emailId" 
-      required pattern = "^ [a-z0-9._%+-]+@ [a-z0-9.-]+\. [a-z] {2,4}$" 
+      required [pattern]="emailPattern" 
       required #email="ngModel" [class.is-invalid] = "email.invalid  && email.touched">
-      <!-- <small [class.d-none]="email.invalid || email.touched">
-   class binding for validation -->
-         <!-- A valid <b><i>Email</i></b> is required to login. -->
-        <!-- </small> --> 
-        <div *ngIf="email.errors && (email.invalid && email.touched) ">
-          <small class="text-danger" *ngIf=" "email.errors.required> Email Id is Required</small>
-          <small class="text-danger" *ngIf=" "email.errors.pattern> Enter Valid Email ID</small>
+      <small *ngIf="email.invalid && email.touched">
+   <!-- class binding for validation -->
+        
+   <div *ngIf="email.errors && registerform.submitted && !isValidFormSubmitted" [ngClass] = "'error'"> 
+    <div *ngIf="email.errors['pattern']"> 
+      Email not in Valid Format.
+    </div>	
+  </div>
+   A valid <b><i>Email</i></b> is required to login.
+        </small> 
+        <!-- <div *ngIf="email.errors && registerform.submitted && !isValidFormSubmitted" [ngClass] = "'error'"> 
+          <div *ngIf="email.errors['pattern']"> 
+            Email not in Valid Format.
+          </div>	
         </div>
-    </div>
+       -->
+        <!-- <small *ngIf="email.errors['pattern'] && email.touched">
+          class binding for validation 
+                 <b><i>Email</i></b> needs to be in the right format.
+               </small>  -->
+    <!-- </div> -->
     <div class="form-group" style="color: black; font-weight: bolder; ">
         <label for="username">
           USERNAME:
@@ -69,10 +85,10 @@
         name= "username" [(ngModel)] = "customer.userName" 
         
         required #username="ngModel" [class.is-invalid] = "username.invalid  && username.touched">
-        <small [class.d-none]="email.invalid || email.touched">
+        <small *ngIf="username.invalid && username.touched">
           <!-- class binding for validation -->
-           A valid <b><i>U</i>Username</b> is required to login.
-          </small>
+                A valid <b><i>Username</i></b> is required to login.
+               </small> 
       </div>
     <div class="form-group" style="color: black; font-weight: bolder; ">
       <label for="pwd">
@@ -89,17 +105,24 @@
         </small>
     </div>
     <br>
-    <button type="submit" class="btn btn-light">REGISTER</button> 
-  </form>.
+    <button type="submit"  class="btn btn-light">REGISTER</button> 
+  <!-- </form>. -->
   <br> 
-  
-  <button class="btn btn-light">
+  <br>
+  <button mat-button mat-dialog-close>
+    <small> 
+      <b>EXIT</b>
+</small>
+  </button>
+
+  <!-- <button class="btn btn-light">
     <small class = "float-right" [routerLink]="['']"> 
 LOGIN
 </small>
-  </button>
+  </button> -->
   </div>
 
+
+<!-- </div>
 </div>
-</div>
-</div>
+</div> -->

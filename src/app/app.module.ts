@@ -19,17 +19,25 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import {MatSortModule} from '@angular/material/sort';
 
 
 import { WjCoreModule } from '@grapecity/wijmo.angular2.core';
 import { WjGridModule } from '@grapecity/wijmo.angular2.grid';
 import {MatCardModule} from '@angular/material/card';
+import {MatTableModule} from '@angular/material/table';
+import {MatDialogModule} from '@angular/material/dialog';
+
+import { MatToolbar } from '@angular/material/toolbar';
 
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { EditClaimComponent } from './edit-claim/edit-claim.component';
 import { ContactPageComponent } from './contact-page/contact-page.component';
-// import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './footer/footer.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import { NgToastModule } from 'ng-angular-popup';
+
 
 
 
@@ -44,15 +52,13 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     NavbarComponent,
     EditClaimComponent,
     ContactPageComponent,
+    FooterComponent,
     
   
-    
-    
-
-    
-    
-
   ],
+
+
+  entryComponents:[RegisterComponent],
   imports: [
     BrowserModule,
     FormsModule,
@@ -70,7 +76,13 @@ import { ContactPageComponent } from './contact-page/contact-page.component';
     MatDatepickerModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatInputModule
+    MatInputModule,
+    MatTableModule,
+    MatSortModule,
+    MatSidenavModule,
+    NgToastModule,
+    MatDialogModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

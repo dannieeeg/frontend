@@ -2,13 +2,19 @@
     position: absolute;
     width: 100%;
     height: 100%;
-    background: url('../../assets/images/redblueback.png') no-repeat;
+    background-color: rgba(255, 255, 255, .15);  
+    backdrop-filter: blur(5px);
+    // background: url('../../assets/images/redblueback.png') no-repeat;
     background-size: cover;
     text-align: center;
     margin-left: auto;
     margin-right:auto;
     background-position: 50% 50%;
     background-attachment: fixed;
+}
+
+._ngcontent-ule-c80{
+    color: red;
 }
 
 // #form-wrapper {     
@@ -20,27 +26,34 @@
 //     margin-top: -100px;     /* Half of height */
 //     margin-left: -150px;     /* Half of width */
 // }
-
-
-.box{
-    top: 50%;
+// .dialog{
+//     width: 800px;
+//     height:800px;
+//     border-radius: 400px 400px;
+// }
+.input{
+    width: 80%;
+}
+.dialog{
+    top: 30%;
     left: 50%;
     margin:0 auto; 
-    width:300px; //you can set it in %.
-    height: 500px;
+    width: 650px; //you can set it in %.
+    height: 600px;
     position: absolute;
-    padding:20px;
-    top: 50%;
+    // padding:20px;
+    // border-radius: 50px 50px;
+    // top: 50%;
     left: 50%;
     margin-top: -100px;     /* Half of height */
-    margin-left: -150px;
+    margin-left: -100px;
     // margin-bottom: -110px;
-    background-color: rgba(255, 255, 255, .15);  
+    background-color: rgba(110, 105, 105, 0.15);  
     backdrop-filter: blur(5px);
-    box-shadow: inset;
-    border-style: outset;
+    // box-shadow: inset;
+    // border-style: outset;
     border:24px;
-    border:2px solid;
+    border:10px solid;
     }
 
 // #form-wrapper {     
